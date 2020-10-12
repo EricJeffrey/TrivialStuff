@@ -10,6 +10,8 @@
 
 - `co_yield expr`等价于`co_await promise.yield_value(expr)` - 即需定义后面的函数才能使用该关键字
 
+- `initial_suspend`可以控制协程创建后的初始行为: 阻塞(不执行) 或 执行直到阻塞/返回
+
 协程对比线程: 
 
 - 协程不是为了更好**并行**，而是为了**异步调用顺序化**

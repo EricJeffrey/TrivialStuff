@@ -66,7 +66,7 @@ struct Generator {
             logger("auto initial_suspend() ");
             return std::suspend_never();
         }
-        // what if suspend_never ?
+
         auto final_suspend() noexcept {
             logger("auto final_suspend() noexcept ");
             return std::suspend_always();
@@ -108,6 +108,7 @@ g++ -g -Wall -o main.out main.cpp -std=c++20 -fcoroutines
 Generator g() {
     logger("Generator g() ");
     for (int i = 7; i < 20; i += 3) {
+        logger("inside generator for loop");
         co_yield i;
     }
 }
@@ -115,7 +116,9 @@ Generator g() {
 int main() {
     logger("int main() ");
     auto generator = g();
-
+    logger("generator created, sleep a while");
+    usleep(800000);
+    logger("start generate values");
     while (generator.next()) {
         cout << generator.value() << endl;
     }
