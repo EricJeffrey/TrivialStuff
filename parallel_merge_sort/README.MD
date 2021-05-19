@@ -1,0 +1,1 @@
+归并排序算法并行化，参考[MergeSort](https://en.wikipedia.org/wiki/Merge_sort).
