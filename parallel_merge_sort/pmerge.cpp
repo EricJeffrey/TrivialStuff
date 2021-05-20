@@ -142,7 +142,6 @@ public:
         printf("wait for idle\n");
         while (true) {
             unique_lock<mutex> lock{queue_mutex};
-            // FIXME
             if (task_queue.empty())
                 break;
             std::this_thread::yield();
