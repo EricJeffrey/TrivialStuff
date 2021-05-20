@@ -112,7 +112,7 @@ public:
                 task = task_queue.front();
                 task_queue.pop();
             }
-            task->pinfo();
+            // task->pinfo();
             decrease_idle();
             task->exec_task();
             delete task;
@@ -139,14 +139,14 @@ public:
     }
 
     void wait_for_all_idle() {
-        printf("wait for idle\n");
+        // printf("wait for idle\n");
         while (true) {
             unique_lock<mutex> lock{queue_mutex};
             if (task_queue.empty())
                 break;
             std::this_thread::yield();
         }
-        printf("wait for idle, task empty\n");
+        // printf("wait for idle, task empty\n");
         // now queue empty, wait for all task done
         while (true) {
             unique_lock<mutex> lock{num_idle_mutex};
@@ -154,7 +154,7 @@ public:
                 break;
             std::this_thread::yield();
         }
-        printf("wait for idle, all idle\n");
+        // printf("wait for idle, all idle\n");
     }
 
     // wait for queue empty then stop
@@ -177,8 +177,8 @@ public:
 };
 
 void pmerge(int *a, int l, int r) {
-    static const int max_thread_num = 40;
-    static const int max_seq_block_size = 100000;
+    static const int max_thread_num = 39;
+    static const int max_seq_block_size = 500000;
     ThreadPool pool{max_thread_num};
     int n = r - l;
     // sequential sort for every block
@@ -191,9 +191,9 @@ void pmerge(int *a, int l, int r) {
     // then merge
     int step = max_seq_block_size;
     pool.wait_for_all_idle();
-    printf("do merge\n");
+    // printf("do merge\n");
     while (step < n) {
-        printf("step: %d\n", step);
+        // printf("step: %d\n", step);
         int start = 0;
         while (start < r) {
             if (start + step >= r) {
@@ -212,11 +212,12 @@ void pmerge(int *a, int l, int r) {
     pool.stop();
 }
 
+// ./a.out input_file.txt
 int main(int argc, char const *argv[]) {
     if (argc >= 2) {
         freopen(argv[1], "r", stdin);
     }
-    FILE *out = stdout;
+    FILE *out = nullptr;
     if (argc >= 3) {
         out = fopen(argv[2], "w");
     }
@@ -248,9 +249,10 @@ int main(int argc, char const *argv[]) {
         printf("PARALLEL - NO OK, fail at %d, with: %d %d %d\n", failure_index,
                a[failure_index - 1], a[failure_index], a[failure_index + 1]);
     fflush(stdout);
-    for (int i = 0; i < n; i++) {
-        fprintf(out, "%d\n", a[i]);
+    if (out != nullptr) {
+        for (int i = 0; i < n; i++)
+            fprintf(out, "%d\n", a[i]);
+        fclose(out);
     }
-    fclose(out);
     return 0;
 }
