@@ -13,7 +13,7 @@ hemisphere:[ˈhemɪsfɪə(r)] n. （地球的）半球；脑半球；（球体�
 weariness:[ˈwɪərinəs] n. 疲倦，疲劳；厌倦
 exquisite:[ɪkˈskwɪzɪt; ˈekskwɪzɪt] adj. 精致的，精美的；剧烈的；细致的，有鉴赏力的; n. 花花公子
 marvel:[ˈmɑːvl] n. 令人惊异的人（或事），奇迹; v. 感到惊奇，大为赞叹; 【名】 （Marvel）（美）马弗尔（人名）
-vouchsafed:[] vt.赐予，给予；告知（vouchsafe 的过去式和过去分词）
+vouchsafed:[ˌvaʊtʃˈseɪf] vt.赐予，给予；告知（vouchsafe 的过去式和过去分词）
 steerage:[ˈstɪərɪdʒ] n. 统舱；舵效；操舵；驾驶；管理；士官的二等室
 prow:[praʊ] n. 船首；机头; adj. 勇敢的
 borne:[bɔːn] v. 忍受；负荷；结果实；生子女（bear 的过去分词）; n. （Borne）人名；（德、西、法）博尔内
@@ -29,11 +29,11 @@ comparatively:[kəmˈpærətɪvli] adv. 比较地，相对地
 profoundly:[prəˈfaʊndli] adv. 深刻地；深深地；极度地
 fuse:[fjuːz] n. 保险丝，熔丝；导火线，引信; v. 熔合，结合；<英>（使保险丝熔断而）停止工作；在（电路或电器）中安装保险丝；装引信（或导火索）于（炸弹，炮弹，地雷）；（使）熔化; 【名】 （Fuse）（美）富塞（人名）
 dizzily:[ˈdɪzɪli] adv. 使人眼花地；头昏眼花地
-whirlpools:n. 漩涡；浴缸；涡旋浴缸（whirlpool 的复数）
+whirlpools:[ˈwɜːlpuːl] n. 漩涡；浴缸；涡旋浴缸（whirlpool 的复数）
 tyranny:[ˈtɪrəni] n. 暴政；专横；严酷；残暴的行为（需用复数）
 guise:[ɡaɪz] n. 伪装；装束；外观; vt. 使化装; vi. 伪装; n. （Guise）人名；（葡）吉塞；（英、法）吉斯
 benevolence:[bəˈnevələns] n. 慈善，仁慈
-interfered:[] v. 妨碍；干涉（interfere的变形）
+interfered:[ˌɪntəˈfɪə(r)] v. 妨碍；干涉（interfere的变形）
 buckle up:[ˈbʌkl ʌp] 系好安全带；把……扣紧
 piston:[ˈpɪstən] n. 活塞；（铜管乐器上的）活塞阀键; 【名】  （Piston）（英、意）皮斯顿（人名）
 locomotive:[ˌləʊkəˈməʊtɪv] n. 机车，火车头; adj. 移动的，运动的
@@ -79,7 +79,7 @@ dethroned:[diːˈθrəʊn] vt. 废黜；废位赶出；罢免
 trammel:[ˈtræm(ə)l] v. 束缚，拘束，阻碍; n. 拘束，束缚（物）；渔网；椭圆规；壁炉锅钩; n. （Trammel）（美、加、俄）特拉梅尔（人名）
 sanitary:[ˈsænətri] adj. 公共卫生的，公共保健的；干净的，卫生的；（用品）月经期间使用的
 broad:[brɔːd] adj. 宽广的，宽阔的；……宽；咧开嘴的；广泛的，普遍的；大致的，概括的；明确的，明显的；粗俗滑稽的；口音重的; n. <美>女人，娘儿们；宽阔部分; adv. 宽阔地; 【名】 （Broad）（英、德）布罗德（人名）
-preceded:[prɪˈsiːd] v. 处在……之前，先于；在……之前做（或说）；比……更重要，比……（级别）更高
+precede:[prɪˈsiːd] v. 处在……之前，先于；在……之前做（或说）；比……更重要，比……（级别）更高
 patron:[ˈpeɪtrən] n. （艺术家的）赞助人，资助者；代言人，名义赞助人；（酒吧、旅馆等的）主顾，顾客；（古罗马）有权势的保护人，庇护人；（古罗马）已获得自由的奴隶的原主人和保护人；<英>有圣职授予权的人（或机构）; 【名】 （Patron）（英）佩特伦，（法、意、罗）帕特龙（人名）
 privation:[praɪˈveɪʃn] n. 贫困；丧失；被剥夺了某物的状态
 imperishable:[ɪmˈperɪʃəbl] adj. 不朽的；不灭的
