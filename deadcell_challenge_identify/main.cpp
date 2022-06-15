@@ -100,7 +100,7 @@ void detectPool() {
                         int m = floor(i / 60.0 / 60.0);
                         double sec = i / 60.0 - m * 60;
                         printf("Score: %.3f, at %s\x7\n", score, curTimeStr().c_str());
-                        cv::imwrite("foo." + to_string(i) + ".png", croppedImg);
+                        cv::imwrite("foo.gotcha.png", croppedImg);
                     }
                 });
             }
