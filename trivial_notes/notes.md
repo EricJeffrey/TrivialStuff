@@ -1,6 +1,10 @@
 
 # 平常使用各种软件遇到的问题/配置
 
+### Linux
+
+网络流量/磁盘IO查看: `nethogs/iostat`
+
 ### VIM
 
 使用Windows Terminal遇到的问题，在进入vim后，光标无法闪烁了，并且退出vim仍然无法闪烁，搜索后发现是vim默认会使用DEC控制字符关闭光标: [mintty](https://github.com/mintty/wsltty/issues/133), [alacritty](https://github.com/alacritty/alacritty/issues/4609), [WindowsTerminal](https://github.com/microsoft/terminal/issues/4335)
