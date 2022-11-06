@@ -20,6 +20,17 @@ mm/memory.c:                        handle_pte_fault
 mm/memory.c:                        do_anonymous_page       => 对read fault特殊处理
 ```
 
+内核中页表操作相关的一些缩写
+
+```
+pgd -> Page Global Directory
+pud -> Page Upper Direcory, 处理4级页表引入的
+p4d -> Page Level 4 Directory, 处理5级页表引入的
+pmd -> Page Middle Directory
+pte -> Page Table Entry
+pfn = Page Frame Number
+```
+
 ### 全局零页 
 
 参考 [CSDN-linux那些事之zero page](https://blog.csdn.net/weixin_42730667/article/details/123121624)
