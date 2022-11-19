@@ -60,4 +60,4 @@ el3 -> 保留，low-level firmware and security code
 
 参考: [mm/mmap.c](https://elixir.bootlin.com/linux/v5.0.1/source/mm/mmap.c#L1701)
 
-![](2022-11-19-14-48-32.png)
+![](images/2022-11-19-14-48-32.png)
