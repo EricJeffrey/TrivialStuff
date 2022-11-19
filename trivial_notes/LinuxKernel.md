@@ -31,7 +31,7 @@ pte -> Page Table Entry
 pfn = Page Frame Number
 ```
 
-### 全局零页 
+### 全局零页
 
 参考 [CSDN-linux那些事之zero page](https://blog.csdn.net/weixin_42730667/article/details/123121624)
 
@@ -53,3 +53,11 @@ el1 -> 内核
 el2 -> hypervisor
 el3 -> 保留，low-level firmware and security code
 ```
+
+### MAP_FIXED导致已map地址失效
+
+指定MAP_FIXED参数时，mmap会首先 `unmap` 掉原有映射，在创建新的映射，如果旧的映射移除之后系统内存不足，则新映射可能创建失败，导致原有内存丢失
+
+参考: [mm/mmap.c](https://elixir.bootlin.com/linux/v5.0.1/source/mm/mmap.c#L1701)
+
+![](2022-11-19-14-48-32.png)
