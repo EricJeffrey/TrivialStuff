@@ -41,3 +41,16 @@ if &term =~ '^xterm'
   " 6 -> solid vertical bar
 endif
 ```
+
+### bash
+
+Ctrl+箭头向前/后移动一个word的配置
+```sh
+#.inputrc
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+```
