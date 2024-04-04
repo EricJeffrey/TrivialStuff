@@ -1,3 +1,5 @@
+
+#include <windows.h>
 #include <stdio.h>
 #include <string.h>
 #include <wchar.h>
@@ -6,6 +8,7 @@
 #include <memory.h>
 #include <time.h>
 #include <sys/time.h>
+
 
 #define EXPAND_S6(expr) { \
         expr; expr; expr; expr; expr; expr; expr; expr; \
@@ -42,23 +45,27 @@
 // vfmadd231ss 1 2 3 -> 1 = round(2 * 3 + 1)
 #define ONE_OP asm("vfmadd231ss %%xmm1, %%xmm2, %%xmm3;" : : )
 
-#define RES_CNT_MAX (1ULL << 15)
+#define RES_CNT_MAX (1ULL << 19)
+#define CNT_PER_LOOP_SHIFT 2
+#define CNT_PER_LOOP (1 << (CNT_PER_LOOP_SHIFT * 6))
+#define LOOPN(n, expr) LOOP_LV##n(expr)
+#define LOOP_N_VA(n, expr) LOOPN(n, expr)
 #define NS_PER_SECOND (1000000000ULL)
 
 void run_test() {
+    printf("total execute cnt:2^%llu\n", __builtin_ctzll(RES_CNT_MAX * CNT_PER_LOOP));
     register unsigned long long result_cnt = 0;
 
     float constant_t = 0.0f;
     float constant_x = 1.0f;
-    float constant_y = 1.0f;
+    float constant_y = 2.0f;
     PREPROCESS(constant_t, constant_x, constant_y);
 
     struct timespec t_1, t_2;
     (void)clock_gettime(CLOCK_MONOTONIC, &t_1);
 
     while (result_cnt < RES_CNT_MAX) {
-#define CNT_PER_LOOP (1 << (2 * 6))
-        LOOP_LV2(ONE_OP);
+        LOOP_N_VA(CNT_PER_LOOP_SHIFT, ONE_OP);
         result_cnt += 1;
     }
 
@@ -78,8 +85,17 @@ void run_test() {
         1.0f * (CNT_PER_LOOP * RES_CNT_MAX));
 }
 
-void float_overflow();
+void setcpuaff() {
+    HANDLE hProcess = GetCurrentProcess();
+    DWORD_PTR processAffinityMask = 0x1;
+    WINBOOL res = SetProcessAffinityMask(hProcess, processAffinityMask);
+    if (!res) {
+        printf("set affinity failed: %d\n", GetLastError());
+    }
+}
+
 int main(){
+    setcpuaff();
     run_test();
     return 0;
 }
